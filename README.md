@@ -1,2 +1,2 @@
 # Sketchbook
-* my processing sketches ... mostly learning
+* sketches, of all kinds 
