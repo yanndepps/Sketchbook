@@ -4,8 +4,8 @@ ArrayList<PVector> heart = new ArrayList<PVector>();
 float a;
 
 void setup() {
-  size(400, 400);
-  /* smooth(16); */
+  size(400, 400, P3D);
+  smooth(8);
 }
 
 void draw() {
@@ -25,4 +25,7 @@ void draw() {
   float y = -r * (13 * cos(a) - 5*cos(2*a) - 2*cos(3*a) - cos(4*a));
   heart.add(new PVector(x, y));
   a += 0.01;
+  if (heart.size() > 300) {
+    heart.remove(0);
+  }
 }
