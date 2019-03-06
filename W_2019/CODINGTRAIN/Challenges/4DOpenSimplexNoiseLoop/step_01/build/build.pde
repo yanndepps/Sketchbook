@@ -5,16 +5,16 @@
 
 int totalFrames = 360;
 int counter = 0;
-boolean record = false;
+boolean record = true;
 
-float increment = 0.03;
+float increment = 0.07;
 
 // Just for non-looping demo
 float zoff = 0;
 
 OpenSimplexNoise noise;
 void setup() {
-  size(640, 640);
+  size(400, 400);
   noise = new OpenSimplexNoise();
 }
 
