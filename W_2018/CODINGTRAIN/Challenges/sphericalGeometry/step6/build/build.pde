@@ -1,5 +1,5 @@
 /*
-  spherical geometry --> step6
+	spherical geometry --> step6
 	epilogue : fix the color mapping issue
 */
 
@@ -20,9 +20,9 @@ void setup() {
 }
 
 void draw() {
-  background(51);
+	background(51);
 	noStroke();
-  lights();
+	lights();
 	float r = 200;
 	for (int i = 0; i < total+1; i++) {
 		float lat = map(i, 0, total, 0, PI);
@@ -38,7 +38,7 @@ void draw() {
 	for (int i = 0; i < total; i++) {
 		// float hu = map(i, 0, total, 0, 255*6);		// rainbow effect
 		// fill(hu % 255, 255, 255);
-		float hu = map(i, 0, total, 0, 255);		// gradient effect 
+		float hu = map(i, 0, total, 0, 255);		// gradient effect
 		fill(hu, 255, 255);
 		beginShape(TRIANGLE_STRIP);
 		for (int j = 0; j < total+1; j++) {
