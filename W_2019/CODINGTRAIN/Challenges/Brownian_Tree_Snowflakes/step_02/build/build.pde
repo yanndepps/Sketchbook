@@ -1,6 +1,5 @@
 // Coding Challenge #127 : Brownian Tree Snowflake
-// Part 02
-// CODINGTRAINER : 1.17.17
+// Part 02 : RunwayML outputs
 
 Particle current;
 ArrayList<Particle> snowflake;
