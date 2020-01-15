@@ -1,4 +1,3 @@
-
 PImage img;
 
 void setup(){

@@ -1,5 +1,6 @@
 void setup() {
-  fullScreen(P3D); 
+  /* fullScreen(P3D); */ 
+  size(500, 500, P3D);
   smooth(); 
   rectMode(CENTER);
 }
