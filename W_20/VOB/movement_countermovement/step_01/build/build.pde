@@ -1,4 +1,4 @@
-// visions of the bauhaus
+// Visions of the Bauhaus
 // movement - countermovement
 
 /*
@@ -35,7 +35,7 @@ float t2 = 0;
 
 void setup() {
   //fullScreen();
-  size(400, 400);
+  size(640, 800);
   smooth();
   loc = new PVector(mouseX, mouseY);
   vel = new PVector(0, 0);
