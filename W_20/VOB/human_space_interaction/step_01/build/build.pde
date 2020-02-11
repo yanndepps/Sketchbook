@@ -1,3 +1,5 @@
+// Human Space Interaction
+
 import processing.video.*;
 
 Capture video;
@@ -5,11 +7,11 @@ PImage backgroundImage;
 float threshold;
 
 void setup() {
-  size(800, 800);
-  video = new Capture(this, 800, 800, Capture.list()[0]);
-  backgroundImage = createImage(800, 800, RGB);
+  size(1280, 720);
+  video = new Capture(this, 1280, 720, Capture.list()[0]);
+  backgroundImage = createImage(1280, 720, RGB);
   video.start();
-  /* printArray(Capture.list()); */
+  printArray(Capture.list());
   noCursor();
 }
 

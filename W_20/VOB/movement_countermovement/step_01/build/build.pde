@@ -1,20 +1,6 @@
 // Visions of the Bauhaus
 // movement - countermovement
 
-/*
-  This experiment combines the concepts of Klee,
-  Mondrian, van Doesburg and Kandinsky and investigates
-  multiple position and size relationships between two
-  forms in an interactive, relational way.
-  A point that can grow into an area the size of
-  the entire format is constantly opposed to an area that
-  dynamically divides the format to varying degrees in
-  response to the movement of the point.
-  The parameters of the two forms are controlled either
-  by hand or by the so called Perlin Noise; they never
-  touch or overlap.
- */
-
 import ddf.minim.*;
 
 Minim minim;

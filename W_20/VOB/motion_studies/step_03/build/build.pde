@@ -1,11 +1,6 @@
 // Visions of the Bauhaus
 // Motion Studies in Space : 03
 
-/*
-  Line relationships and their plane-forming effect
-  are explored.
-*/
-
 Particle p;
 ArrayList<Particle> particles;
 int count = 0;

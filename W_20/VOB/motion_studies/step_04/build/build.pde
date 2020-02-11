@@ -1,12 +1,6 @@
 // Visions of the Bauhaus
 // Motion Studies in Space : 04
 
-/*
-  Line relationships and their plane-forming effect
-  are explored.
-*/
-
-
 void setup() {
   size(800, 800, P2D);
   frameRate(5);

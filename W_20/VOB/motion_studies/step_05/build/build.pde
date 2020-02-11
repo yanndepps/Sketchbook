@@ -1,11 +1,6 @@
 // Visions of the Bauhaus
 // Motion Studies in Space : 05
 
-/*
-  Line relationships and their plane-forming effect
-  are explored.
-*/
-
 float ta = 0;
 float tb = 0;
 float t1 = 0;

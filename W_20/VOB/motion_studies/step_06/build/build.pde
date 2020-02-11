@@ -1,11 +1,6 @@
 // Visions of the Bauhaus
 // Motion Studies in Space : 06
 
-/*
-  Line relationships and their plane-forming effect
-  are explored.
-*/
-
 Murmel m;
 
 void setup() {
