@@ -27,7 +27,7 @@ void setup() {
 
 // DRAW
 void draw() {
-  beginRecord(PDF, "meteorStrikes.pdf");
+  //beginRecord(PDF, "meteorStrikes.pdf");
   shape(baseMap, 0, 0, width, height);
   noStroke();
   
@@ -37,9 +37,10 @@ void draw() {
     noStroke();
     float graphLong = map(float(myData[i][3]), -180, 180, 0, width);
     float graphLat = map(float(myData[i][4]), 90, -90, 0, height);
+    //println(graphLong);
     float markerSize = 0.05*sqrt(float(myData[i][2]))/PI;
     ellipse(graphLong, graphLat, markerSize, markerSize);
-    
+    // label only the first 20 elements
     if(i<20){
       fill(0);
       textFont(f);
@@ -49,6 +50,6 @@ void draw() {
       line(graphLong+markerSize/2, graphLat, graphLong+markerSize, graphLat);
     }
   }
-  endRecord();
-  println("PDF Saved!");
+  //endRecord();
+  //println("PDF Saved!");
 }

@@ -1,3 +1,6 @@
 .DS_Store
 SRCs/
+*.log
+*.vscode
+out
 .projectile
