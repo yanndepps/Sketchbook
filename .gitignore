@@ -4,3 +4,4 @@ SRCs/
 *.vscode
 out
 .projectile
+tags
