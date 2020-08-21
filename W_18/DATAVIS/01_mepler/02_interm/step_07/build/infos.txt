@@ -1,8 +1,0 @@
-setup instructions : how to parse your data
-
-01 : find your data
-02 : clean your data
-03 : import and parse your data
-04 : create objects to hold your data for display
-05 : mapping/translating your values to pixel land
-06 : GUI / UI / UX
