@@ -1,5 +1,7 @@
 .DS_Store
 SRCs/
+W_18/
+W_19/
 *.log
 *.vscode
 out
