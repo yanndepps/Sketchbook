@@ -18,7 +18,7 @@ void setup() {
 }
 
 void draw() {
-  background(0);
+  background(#1c1c1c);
   // start drawing
   drawPg();
   drawPg2();
@@ -59,7 +59,7 @@ void draw() {
   image(buffer, width/2, height/2);
   // record movie
   // rec();
-  if (frameCount == 360) {
+  if (frameCount == 720) {
     exit();
   }
 }
