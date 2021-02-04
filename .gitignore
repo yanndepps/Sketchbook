@@ -1,4 +1,9 @@
-.DS_Store
-SRC_20/
+GNRTV_DSGN/
+modes/
+libraries/
+templates/
+tools/
+examples/
+*.org
 *.log
 .projectile
