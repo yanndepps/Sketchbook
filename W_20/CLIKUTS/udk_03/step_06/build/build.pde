@@ -12,7 +12,7 @@ void setup() {
     input.start();
     fft = new FFT(this, bands);
     fft.input(input);
-    //smooth(4);
+    smooth(4);
 }
 void draw() {
     stroke(0);
