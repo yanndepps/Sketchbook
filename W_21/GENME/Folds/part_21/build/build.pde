@@ -9,10 +9,15 @@ float y;
 boolean go = true;
 
 // parameterization P={pdj_a,pdj_b,pdj_c,pdj_d}
-float pdj_a = 0.1; // 1.0111
-float pdj_b = 1.9; // -1.011
-float pdj_c = -0.8; // 2.08
-float pdj_d = -1.2; // 10.2
+/* float pdj_a = 0.1; // 1.0111 */
+/* float pdj_b = 1.9; // -1.011 */
+/* float pdj_c = -0.8; // 2.08 */
+/* float pdj_d = -1.2; // 10.2 */
+
+float pdj_a = random(-3, 3); // 1.0111
+float pdj_b = random(-3, 3); // -1.011
+float pdj_c = random(-3, 3); // 2.08
+float pdj_d = random(-3, 3); // 10.2
 
 // sech parameters
 float cosh(float x) { return 0.5 * (exp(x) + exp(-x)); }
@@ -55,8 +60,8 @@ void drawVariation( float x, float y ) {
   PVector v = new PVector(x, y);
   
   for ( int i = 0; i < n; i++ ) {
-    /* v = julia(sech(v, 1), 1); */
-    v = pdj(sech(v, 1), 3); 
+    v = julia(pdj(v, 1), 1);
+    /* v = pdj(sech(v, 1), 3); */ 
     v = sinusoidal(v, (x2-x1)/2);
     float xx = map( v.x+0.003*randomGaussian(), x1, x2, 20, width-20 );
     float yy = map( v.y+0.003*randomGaussian(), y1, y2, 20, height-20 );
@@ -111,3 +116,4 @@ PVector addF(PVector v1, PVector v2) {return new PVector(v1.x + v2.x, v1.y + v2.
 PVector subF(PVector v1, PVector v2) {return new PVector(v1.x - v2.x, v1.y - v2.y);}
 PVector mulF(PVector v1, PVector v2) {return new PVector(v1.x * v2.x, v1.y * v2.y);}
 PVector divF(PVector v1, PVector v2) {return new PVector(v2.x == 0 ? 0 : v1.x / v2.x, v2.y == 0 ? 0 : v1.y / v2.y);}
+

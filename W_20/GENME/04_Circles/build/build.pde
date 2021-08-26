@@ -8,12 +8,12 @@ void setup() {
   size(600, 600,P2D);
   smooth();
   strokeWeight(2);
-  
+
   redraw();
 }
 
 void draw() {
-// nothing here
+  // nothing here
 }
 
 void mouseClicked() {
@@ -23,17 +23,17 @@ void mouseClicked() {
 void redraw() {
   background(255,250,250);
   stroke(150,70);
-  
+
   // circle
   for(int i=0;i<30;i++) {
     fill(230+randomGaussian()*4,230+randomGaussian()*4,240+randomGaussian()*4,10);
     ellipse(300+randomGaussian()*4,300+randomGaussian()*4,500+randomGaussian()*5,500+randomGaussian()*5);
   }
-  
+
   // lines
   for(int i=0;i<3;i++)
     fillCircle(random(0,2*PI),(int)random(30,200));
-  
+
 }
 
 // fill half of the circle with pencil drawing
@@ -48,7 +48,7 @@ void fillCircle(float ang,int col) {
     for(int i=0;i<n;i++) {
       stroke(180+col/3+randomGaussian()*10,col,220-col/3+randomGaussian()*5,30);
       line( -l1+randomGaussian()*n,l2+randomGaussian()*n,
-             l1+randomGaussian()*n,l2+randomGaussian()*n);
+          l1+randomGaussian()*n,l2+randomGaussian()*n);
     }
   }
   popMatrix();
@@ -65,7 +65,7 @@ void fillCircle(float ang,int col) {
 //      v2 = 2 * random() - 1;
 //      s = v1 * v1 + v2 * v2;
 //    } while (s >=1 || s == 0);
-    
+
 //    float mult = sqrt(-2 * log(s) / s);
 //    nextGaussian = v2 * mult;
 //    haveNextGaussian = true;
