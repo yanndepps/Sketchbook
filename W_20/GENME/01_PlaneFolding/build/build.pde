@@ -51,24 +51,32 @@ String constructName() {
 }
 
 void draw() { 
+  generate();
+}
 
+void generate() {
   if(go) {
     for(int f = 0; f < 3; f++) {
-      for(float i=-3.0;i<=3.0;i+=step)
+      for(float i=-3.0;i<=3.0;i+=step) {
         drawme(i,start);
+      }
       start += step;
     }
 
     if(start > 3.0) {
-      go = false; 
-      // distortion 
-      for(int i=0;i<500;i++)
+      go = false;
+      // distortion
+      for(int i=0;i<500;i++) {
         for(int j=0;j<500;j++) {
           fill(100+randomGaussian()*20,20);
           ellipse(i,j,1.0+0.4 * randomGaussian(),1.0+0.4*randomGaussian());
         }
       fill(20,100);
       text(constructName(),1,1);
+      // println(constructName());
+      // add saveFrame() + large print export
+      // exit();
+      }
     }
   }
 }
@@ -94,8 +102,9 @@ void drawme(float x, float y) {
   }
 
   n.add( f.realgaussian(p,0.002)); 
-  if(dosinusoidal)
+  if(dosinusoidal) {
     n = f.sinusoidal(n,1);
+  }
   f.draw( n );
 }
 
@@ -320,6 +329,7 @@ class Folds {
     return new PVector(r * cos(a), r * sin(a));
   }
 
+  // TODO
   PVector rotate(PVector p, float angle) {
     float ca = cos(angle);
     float sa = sin(angle);

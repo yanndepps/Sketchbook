@@ -21,12 +21,17 @@ float pdj_d = -1.2; // 10.2
 float cosh(float x) { return 0.5 * (exp(x) + exp(-x)); }
 float sinh(float x) { return 0.5 * (exp(x) - exp(-x)); }
 
+// scale and segment an image
+int scaleValue = 4;
+int xoffset = 0;
+int yoffset = 0;
+
 void setup() {
   size(600, 600);
   background(250);
   smooth(8);
   noFill();
-  stroke(20, 15);
+  stroke(20, 55);
   strokeWeight(0.9);
 
   x1 = y1 = -3;
@@ -36,6 +41,8 @@ void setup() {
 }
 
 void draw() {
+  scale(scaleValue);
+  translate(xoffset * (-width/scaleValue), yoffset * (-height/scaleValue));
   if (go) {
     for ( int i = 0; ( i < 20 )&go; i++ ) { // draw 20 lines at once
       for ( float x = x1; x <= x2; x += step ) {
@@ -48,6 +55,7 @@ void draw() {
       }
     }
   }
+  setOffset();
 }
 
 void drawVariation( float x, float y ) {
@@ -109,3 +117,18 @@ PVector addF(PVector v1, PVector v2) {return new PVector(v1.x + v2.x, v1.y + v2.
 PVector subF(PVector v1, PVector v2) {return new PVector(v1.x - v2.x, v1.y - v2.y);}
 PVector mulF(PVector v1, PVector v2) {return new PVector(v1.x * v2.x, v1.y * v2.y);}
 PVector divF(PVector v1, PVector v2) {return new PVector(v2.x == 0 ? 0 : v1.x / v2.x, v2.y == 0 ? 0 : v1.y / v2.y);}
+
+void setOffset() {
+  save("fuck-" + xoffset + "_" + yoffset + ".png");
+  if (go) {
+    xoffset++;
+    if (xoffset == scaleValue) {
+      xoffset = 0;
+      yoffset++;
+      if (yoffset == scaleValue) {
+        exit();
+      }
+    }
+    background(250);
+  }
+}

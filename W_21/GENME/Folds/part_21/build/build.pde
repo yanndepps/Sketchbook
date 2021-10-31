@@ -14,10 +14,10 @@ boolean go = true;
 /* float pdj_c = -0.8; // 2.08 */
 /* float pdj_d = -1.2; // 10.2 */
 
-float pdj_a = random(-3, 3); // 1.0111
-float pdj_b = random(-3, 3); // -1.011
-float pdj_c = random(-3, 3); // 2.08
-float pdj_d = random(-3, 3); // 10.2
+float pdj_a = random(-3, 3);
+float pdj_b = random(-3, 3);
+float pdj_c = random(-3, 3);
+float pdj_d = random(-3, 3);
 
 // sech parameters
 float cosh(float x) { return 0.5 * (exp(x) + exp(-x)); }
@@ -27,11 +27,12 @@ float sinh(float x) { return 0.5 * (exp(x) - exp(-x)); }
 int n = 2; // 1, 2, 4, 8, 16, 32, 64, 128
 
 void setup() {
-  size(600, 600);
-  background(250);
+  size(3250, 3250, P2D);
+  // size(600, 600, P2D);
   smooth(8);
+  background(250);
   noFill();
-  stroke(60, 15);
+  stroke(20, 15);
   strokeWeight(0.9);
 
   x1 = y1 = -3;
@@ -42,6 +43,10 @@ void setup() {
 }
 
 void draw() {
+  generate();
+}
+
+void generate() {
   if (go) {
     for ( int i = 0; ( i < 20 )&go; i++ ) { // draw 20 lines at once
       for ( float x = x1; x <= x2; x += step ) {
@@ -51,16 +56,24 @@ void draw() {
       if ( y > y2 ) {
         go = false;
         println( "done" );
+        saveImage();
+        exit();
       }
     }
   }
+}
+
+void saveImage() {
+  String timestamp = year() + nf(month(), 2) + nf(day(), 2) + "-"  + nf(hour(), 2) + nf(minute(), 2) + nf(second(), 2);
+  saveFrame(timestamp+".png");
 }
 
 void drawVariation( float x, float y ) {
   PVector v = new PVector(x, y);
   
   for ( int i = 0; i < n; i++ ) {
-    v = julia(pdj(v, 1), 1);
+    // v = julia(pdj(v, 1), 1);
+    v = hyperbolic(pdj(julia(v, 1), 1), 3);
     /* v = pdj(sech(v, 1), 3); */ 
     v = sinusoidal(v, (x2-x1)/2);
     float xx = map( v.x+0.003*randomGaussian(), x1, x2, 20, width-20 );

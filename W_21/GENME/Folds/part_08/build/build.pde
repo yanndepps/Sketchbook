@@ -53,7 +53,7 @@ void drawVariation( float x, float y ) {
   /* v = sinusoidal(v, amount); */
   /* v = hyperbolic(v, amount); */
   /* v = pdj(v, amount); */
-  /* v = julia( v, amount ); */
+  // v = julia( v, amount );
   v = sech( v, amount );
 
   float xx = map( v.x+0.003*randomGaussian(), x1, x2, 20, width-20 );
