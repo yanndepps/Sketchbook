@@ -3,6 +3,8 @@
 // Plane folding
 // Copyright by tsulej 2014
 // add large print export
+// A4 -> 300dpi -> 2480px
+// A5 -> 300dpi -> 1754px
 
 float step;
 Folds f;
@@ -15,11 +17,10 @@ boolean dosinusoidal = true;
 
 int fnumber;
 
-int nw = 3250;
-int nh = 3250;
+int nw = 1754;
+int nh = 1754;
 
 void settings() {
-  // size(3250, 3250, P2D); // high resolution export
   size(nw, nh, P2D); // screenshot
   smooth(8);
 }
@@ -86,9 +87,12 @@ void generate() {
           ellipse(i, j, 1.0 + 0.4 * randomGaussian(), 1.0 + 0.4 * randomGaussian());
         }
         fill(20, 100);
-        // text(constructName(), 1, 1);
-        println("done -> " + " " + constructName());
       }
+      // text(constructName(), 1, 1);
+      println("done rendering !");
+      saveImage();
+      println("done saving !");
+      println("--------------->");
     }
   }
 }

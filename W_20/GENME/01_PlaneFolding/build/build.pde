@@ -72,11 +72,8 @@ void generate() {
           ellipse(i,j,1.0+0.4 * randomGaussian(),1.0+0.4*randomGaussian());
         }
       fill(20,100);
-      text(constructName(),1,1);
-      // println(constructName());
-      // add saveFrame() + large print export
-      // exit();
       }
+      text(constructName(),1,1);
     }
   }
 }
