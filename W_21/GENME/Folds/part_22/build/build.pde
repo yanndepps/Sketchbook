@@ -21,14 +21,13 @@ int nw = 1754;
 int nh = 1754;
 
 void settings() {
-  size(nw, nh, P2D); // screenshot
+  size(nw, nh, P2D);
   smooth(8);
 }
 
 void setup() {
   colorMode(RGB, 255);
   noStroke();
-  // step = sqrt(n) * (x2-x1) / (2.231*width);
   step = 6.0 / (2.0*width);
   textAlign(LEFT, TOP);
   initialize();
@@ -106,7 +105,7 @@ void drawme(float x, float y) {
       n.add(f.getFoldbyNo(folds[0], p, 1));
       break;
     case 2:
-      n.add(f.getFoldbyNo(folds[0], f.getFoldbyNo(folds[0], p, 1), 1));
+      n.add(f.getFoldbyNo(folds[0], f.getFoldbyNo(folds[1], p, 1), 1));
       break;
     case 3:
       n.add(f.getFoldbyNo(folds[0], f.getFoldbyNo(folds[1], f.getFoldbyNo(folds[2], p, 1), 1), 1));
@@ -426,10 +425,7 @@ class Folds {
   }
 }
 
-
-// save screenshot or large print image
 void saveImage() {
   String timestamp = year() + nf(month(), 2) + nf(day(), 2) + "-"  + nf(hour(), 2) + nf(minute(), 2) + nf(second(), 2);
   saveFrame(timestamp+".png");
 }
-

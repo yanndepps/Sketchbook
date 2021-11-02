@@ -326,7 +326,6 @@ class Folds {
     return new PVector(r * cos(a), r * sin(a));
   }
 
-  // TODO
   PVector rotate(PVector p, float angle) {
     float ca = cos(angle);
     float sa = sin(angle);
