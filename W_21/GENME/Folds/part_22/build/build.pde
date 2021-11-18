@@ -22,7 +22,7 @@ int nh = 1754;
 
 void settings() {
   size(nw, nh, P2D);
-  smooth(8);
+  smooth();
 }
 
 void setup() {
@@ -46,8 +46,10 @@ void initialize() {
   background(255, 250, 245);
   dosinusoidal = random(0, 1) < 0.5 ? true : false;
   fnumber = (int)floor(random(1, 4.99));
+  println("fnumber ->" + " " + fnumber);
   for (int i = 0; i < fnumber; i++) {
     folds[i] = (int)floor(random(1, 21.99));
+    println("folds ->" + " " +folds[i]);
   }
 }
 
@@ -83,12 +85,13 @@ void generate() {
       for (int i = 0; i < nw; i++) {
         for (int j = 0; j < nh; j++) {
           fill(100 + randomGaussian() * 20, 20);
-          ellipse(i, j, 1.0 + 0.4 * randomGaussian(), 1.0 + 0.4 * randomGaussian());
+          ellipse(i, j, 1.0 + 0.3 * randomGaussian(), 1.0 + 0.4 * randomGaussian());
         }
         fill(20, 100);
       }
       // text(constructName(), 1, 1);
       println("done rendering !");
+      println(constructName());
       saveImage();
       println("done saving !");
       println("--------------->");
