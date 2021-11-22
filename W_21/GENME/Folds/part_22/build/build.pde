@@ -17,8 +17,10 @@ boolean dosinusoidal = true;
 
 int fnumber;
 
-int nw = 1754;
-int nh = 1754;
+/* int nw = 1754; */
+/* int nh = 1754; */
+int nw = 512;
+int nh = 512;
 
 void settings() {
   size(nw, nh, P2D);
