@@ -1,13 +1,12 @@
 // --- #164 -> Bending Time Slitscan --- //
 // using the copy() function
-// use live input 
+// slitscan
 
 import processing.video.*;
 Capture cam;
 
-float angle = 0.0;
-int w = 10;
-int cols;
+int w = 2; // 10
+int x = 0;
 
 void settings() {
   size(640, 480, P2D);
@@ -15,6 +14,7 @@ void settings() {
 }
 
 void setup() {
+  background(33);
   String[] cameras = Capture.list();
   if (cameras.length == 0) {
     println("there are no cameras available for capture");
@@ -28,21 +28,15 @@ void setup() {
     cam = new Capture(this, cameras[0]);
     cam.start();
   }
-
-  cols = width / w;
 }
 
 void draw() {
-  background(33);
   if (cam.available() == true) {
     cam.read();
   }
 
-  for (int x = 0; x < width; x += w) {
-    float factor = map(x, 0, width, 0.1, 2);
-    int offset = int(map(sin(angle * factor), -1, 1, 0, cols));
-    int sx = ( x + offset * w ) % width;
-    copy(cam, sx, 0, w, height, x, 0, w, height);
-  }
-  angle += 0.01;
+  // grab slices from the middle
+  copy(cam, width/2 - w/2, 0, w, height, x, 0, w, height);
+  // every frames, move that slice over by one pixel
+  x = ( x + w ) % width;
 }
