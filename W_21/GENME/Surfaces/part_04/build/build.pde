@@ -9,8 +9,8 @@
 int nw = 620;
 int nh = 620;
 
-int seed = 6;
-
+float dim = min(nw, nh);
+float ns = dim * 0.000202;
 
 void settings() {
   size(nw, nh, P2D);
@@ -18,10 +18,10 @@ void settings() {
 }
 
 void setup() {
-  randomSeed(seed);
+  println(ns);
   noStroke();
   background(240);
-  fill(10, 10);
+  fill(10, 50);
 }
 
 void draw() {
@@ -34,21 +34,21 @@ void generate() {
     // random input vector
     PVector v = new PVector(random(-1, 1), random(-1, 1));
     // vector field
-    PVector fv = waves(popcorn(v));
+    PVector fv = popcorn(waves(v));
     // subtract trick
     fv.sub(v);
 
-    float alpha = v.heading();
-    float beta = fv.heading();
+    float al = v.heading();  // alpha
+    float be = fv.heading(); // beta
 
-    float n_alpha = 0.5 * (noise(v.x, fv.y, alpha)-0.5);
-    float n_beta = 0.5 * (noise(fv.x, v.y, beta)-0.5);
+    float n_alpha = 0.5 * (noise(v.x, fv.y, al)-0.5);
+    float n_beta = 0.5 * (noise(fv.x, v.y, be)-0.5);
 
-    float x = map(alpha + n_alpha, -PI, PI, 50, width-50);
-    float y = map(beta + n_beta, -PI, PI, 50, height-50);
+    float x = map(al + n_alpha, -PI, PI, 50, width-50);
+    float y = map(be + n_beta, -PI, PI, 50, height-50);
 
     /* rect(x, y, 1, 1); */
-    ellipse(x, y, 0.5, 0.5);
+    ellipse(x, y, ns, ns);
   }
 }
 
@@ -82,4 +82,5 @@ void keyPressed() {
 void saveImage() {
   String timestamp = year() + nf(month(), 2) + nf(day(), 2) + "-"  + nf(hour(), 2) + nf(minute(), 2) + nf(second(), 2);
   saveFrame(timestamp+".png");
+  println("done saving !");
 }
