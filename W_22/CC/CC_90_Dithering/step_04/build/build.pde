@@ -12,7 +12,7 @@ String savePath = "./export/patterning_pix.jpg";
 PGraphics main; // main graphics for exp at different size than screen work
 int size = 512; // final exp size including borders
 int scale = 1; // working scale, divisor for exp size
-int border = 10;
+int border = 20;
 int downSampleFactor = 4; // must be 1 or 2^something
 
 color primaryColor;
