@@ -8,7 +8,7 @@
 
 // --- glabal vars --- //
 boolean export = true;
-String savePath = "./export/bd_pix.jpg";
+String savePath = "./export/bd_oj_pix.jpg";
 PGraphics main; // main graphics for exp at different size than screen work
 int size = 512; // final exp size including borders
 int scale = 1; // working scale, divisor for exp size
@@ -44,11 +44,11 @@ void setupEnvironment() {
 
 // --- set up Color vars --- //
 void setupColors() {
-  primaryColor = color(255);
-  // primaryColor = color(255, 221, 0); // contest color 1
+  // primaryColor = color(255);
+  primaryColor = color(255, 221, 0); // contest color 1
   // secondaryColor = color(0, 0, 170);
-  secondaryColor = color(0);
-  // secondaryColor = color(0, 87, 183); // contest color 2
+  // secondaryColor = color(0);
+  secondaryColor = color(0, 87, 183); // contest color 2
 }
 
 // --- load image and pre-processing --- //
