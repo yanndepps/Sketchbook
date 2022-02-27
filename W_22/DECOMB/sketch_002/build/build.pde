@@ -15,6 +15,7 @@ void setup() {
   size(512, 512);
   colorMode(HSB, 360.0, 100.0, 100.0, 100.0);
   smooth();
+  frameRate(30);
 
   waveCnt = 3; // 6
   frmCntMax = 24 * 9;
@@ -64,7 +65,7 @@ void draw() {
     }
     ++lineIndex;
   }
-  saveFrame("frames/####.png");
+  saveFrame("frames/frame_####.png");
   if (frameCount > frmCntMax) {
     exit();
   }
