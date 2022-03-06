@@ -7,7 +7,7 @@ PShader shader;
 
 int w = 512;
 int h = 512;
-float radius = 1.0;
+float radius = 2.5;
 float mag = ( w * 0.45 ) - radius;
 
 void settings() {
@@ -18,6 +18,7 @@ void settings() {
 void setup() {
   background(0);
   noStroke();
+  rectMode(CENTER);
   shader = loadShader("shader.frag");
 }
 
@@ -35,9 +36,9 @@ void draw() {
     float wave2 = map(cos(radians(frameCount * 0.2 + i)), -1, 1, -mag, mag);
 
     // float wave1 = map(tan(radians(frameCount * 0.8 + i + w)), -1, 1, -mag/4, mag/4);
-    // float wave2 = map(tan(radians(frameCount * 0.2 + i)), -1, 1, -mag * 0.95, mag * 0.95);
+    // float wave2 = map(tan(radians(frameCount * 0.2 + i)), -1, 1, -mag * 0.25, mag * 0.25);
 
-    float c = map(sin(radians(frameCount * 5 + i)), -1, 1, 0, 255);
+    // float c = map(sin(radians(frameCount * 5 + i)), -1, 1, 0, 255);
 
     // fill(c, 0, 100, 64);
     // fill(255, 128);
