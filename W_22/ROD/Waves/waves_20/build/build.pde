@@ -1,6 +1,15 @@
 /*
  * dynamic waveforms with nested for-loops
  * variation #07
+ * perfect loop
+ * we used radians() to drive the frameCount in the sin(), cos() and tan() functions.
+ * The reason for this is that this way one know exactly when the wave reaches its
+ * starting point again, namely in frame 360.
+ * One cycle of the wave is exactly 360 frames long.
+ * When one renders videos and animation from sketches and use wave movements in them,
+ * one ends the rendering at frame 359, because frame 360 is the same as frame 0.
+ * When the video is then looped, it creates the illusion that it is infinitely
+ * long and has no end.
  */
 
 float r;
