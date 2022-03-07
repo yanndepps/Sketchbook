@@ -1,0 +1,19 @@
+/*
+ * further use cases
+ * wave controlling the color of an element
+ */
+
+void setup() {
+  size(640, 640);
+  frameRate(30);
+  noStroke();
+}
+
+void draw () {
+  background(0);
+  // ---
+  translate(width/2, height/2);
+  float wave = map(sin(radians(frameCount)), -1, 1, 0, 255);
+  fill(wave);
+  circle(0, 0, height * 0.9);
+}
