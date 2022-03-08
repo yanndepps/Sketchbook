@@ -19,10 +19,13 @@
  * It then simply displays the value of the variable.
  */
 
-void setup() {
-  // ---
-}
+String text = "Hi!";
+char c = '?';
 
-void draw() {
-  // ---
+void setup() {
+  size(620, 620);
+  background(255);
+  fill(0);
+  // text(text, width/2, height/2);
+  text(c, width/2, height/2);
 }
