@@ -1,6 +1,6 @@
 /*
- * TypeMachines -> step_10
- * example -> charAt
+ * TypeMachines -> step_11
+ * example -> newsticker
  * */
 
 PFont thing;
