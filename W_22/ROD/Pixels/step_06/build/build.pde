@@ -1,6 +1,10 @@
 /*
  * Pixels & Images
  * step_06 -> masking with PGraphics
+ * images can also be masked so that certain areas are cut out of the picture.
+ * To do this, you can use a second image that marks the areas to be cut away
+ * in white on black. With the mask()-function, which is part of the PImage class,
+ * you define which image should be masked or cropped with which mask.
  */
 
 PImage img;
