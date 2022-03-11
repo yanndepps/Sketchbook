@@ -15,11 +15,11 @@ void setup() {
   // ---
   img = loadImage("pix_01.jpg");
   img.filter(GRAY);
-  imageMode(CENTER);
 }
 
 void draw() {
   background(bg);
+  imageMode(CENTER);
   // ---
   push();
   translate(width/2, height/2);

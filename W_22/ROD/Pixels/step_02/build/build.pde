@@ -22,10 +22,10 @@ void setup() {
   img = loadImage("pix_01.jpg");
   img.filter(GRAY);
   img.resize(width/2, 0);
-  imageMode(CENTER);
 }
 
 void draw() {
   background(bg);
+  imageMode(CENTER);
   image(img, width/2, height/2);
 }

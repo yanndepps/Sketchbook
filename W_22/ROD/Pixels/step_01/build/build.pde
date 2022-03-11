@@ -12,11 +12,11 @@ color bg = #333333;
 void setup() {
   size(512, 512);
   img = loadImage("pix_01.jpg");
-  imageMode(CENTER);
   img.filter(GRAY);
 }
 
 void draw() {
   background(bg);
+  imageMode(CENTER);
   image(img, width/2, height/2);
 }
