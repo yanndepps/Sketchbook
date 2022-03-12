@@ -1,6 +1,6 @@
 /*
  * Pixels & Images
- * step_07 -> picking colors 01
+ * step_08 -> picking colors 02
  */
 
 PImage img;
@@ -21,9 +21,12 @@ void draw() {
   imageMode(CENTER);
   // ---
   image(img, width/2, height/2);
+  color c = img.get(mouseX, mouseY);
   noStroke();
   noCursor();
-  color c = img.get(mouseX, mouseY);
   fill(c);
-  ellipse(mouseX, mouseY, 50, 50);
+  rect(width*0.5, 0, width*0.5, height);
+  // ---
+  fill(#ff0000);
+  ellipse(mouseX, mouseY, 8, 8);
 }
