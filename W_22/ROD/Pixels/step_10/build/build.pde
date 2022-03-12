@@ -1,11 +1,10 @@
 /*
  * Pixels & Images
- * step_09 -> pixelation
+ * step_10 -> threshold
  *
- * In this example, we make use of the get function to determine
- * the brightness value of a pixel.
- * For this we have the brightness() function, which converts a color variable
- * into a float that determines the brightness of the pixel between 0 and 255.
+ * this example uses the brightness value of each pixel of the image to decide
+ * whether to fill the tile in the grid white or black.
+ * This creates a threshold effect.
  */
 
 PImage img;
@@ -23,15 +22,13 @@ void setup() {
 
 void draw() {
   background(bg);
-  noStroke();
-  fill(fg);
+  // noStroke();
   // ---
-  float tiles_x = floor( width * 0.06 );
-  float tiles_y = floor( height * 0.06 );
-  // println("tiles_y size -> ", tiles_y);
+  float tiles_x = floor( width * 0.12 );
+  float tiles_y = floor( height * 0.12 );
   float tile_w = width / tiles_x;
   float tile_h = height / tiles_y;
-  // println("tile_w -> ", tile_w);
+  float wave = map(sin(radians(frameCount)), -1, 1, 0, 255);
   // ---
   for (int x = 0; x < tiles_x; x++) {
     for (int y = 0; y < tiles_y; y++) {
@@ -39,7 +36,14 @@ void draw() {
       int py = int(y * tile_h);
       color c = img.get(px, py);
       float b = brightness(c);
-      fill(b);
+      // ---
+      if (b < wave) {
+        stroke(bg);
+        fill(bg);
+      } else {
+        stroke(fg);
+        fill(fg);
+      }
       rect(x * tile_w, y * tile_h, tile_w, tile_h);
     }
   }
