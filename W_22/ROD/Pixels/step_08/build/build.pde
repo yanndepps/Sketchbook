@@ -1,6 +1,15 @@
 /*
  * Pixels & Images
  * step_08 -> picking colors 02
+ *
+ * Image data is basically nothing more than rasters of pixels.
+ * Each pixel has a color value and we can access these color values
+ * directly in Processing.
+ * So it is possible to query the color of a very specific pixel.
+ * And this is the basis for any kind of image manipulation in Processing.
+ *
+ * The get() function is part of the PImage class and can be used to extract
+ * a specific color value from an image.
  */
 
 PImage img;
