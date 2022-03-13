@@ -62,5 +62,5 @@ void draw() {
     }
   }
   saveFrame("out/collage_###.jpg");
-  if (frameCount >= 10) exit();
+  if (frameCount >= 20) exit();
 }
