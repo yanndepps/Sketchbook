@@ -1,16 +1,9 @@
 /*
  * thedotsiblack.com
  * interpolate colors with lerpColor
- * step_02
+ * step_03
  *
- * interpolate the colors of the grid :
- * 1. declare the colors to interpolate
- * 2. use the lerpColor() function to create new colors at various intervals
- * 3. declare a variable and determine the intervals ( e.g. the grid )
- *
- * add rotate() to visualize the changes of color
- * add alpha counter to rotate the rectangles in the grid
- * connect alpha with the intervals
+ * to make the color changes more visible, add three round corners to the rect.
  */
 
 int gridSize = 50; // 46 92 184 276
@@ -57,7 +50,7 @@ void draw() {
       translate(x, y);
       rotate(radians(i*j+alpha));
       fill(interpolate);
-      rect(0, 0, shapeSize, shapeSize);
+      rect(0, 0, shapeSize, shapeSize, 0, shapeSize/2, shapeSize/2, shapeSize/2);
       popMatrix();
     }
   }
