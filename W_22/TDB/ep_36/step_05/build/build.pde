@@ -15,13 +15,13 @@ int mx, my;
 float alpha;
 float angle[];
 
-// color from = #ED0DD9;
-// color to = #C1C6FC;
-// color from_2 = #BE03FD;
-color from = color(0, 150, 250);
-color from_2 = color(255);
-color to = color(0, 15, 35);
+color from = #ED0DD9;
+color to = #C1C6FC;
+color from_2 = #BE03FD;
 color bg = color(33, 33, 33);
+// color from = color(0, 150, 250);
+// color from_2 = color(255);
+// color to = color(0, 15, 35);
 
 void setup() {
   size(620, 620, P2D);
@@ -41,15 +41,18 @@ void setup() {
   for (int i = 0; i < cols*rows; i++) {
     alpha += 11;
     angle[i] = alpha;
+    angle[i] = random(360);
   }
 }
 
 void draw() {
   background(bg);
   // ---
+  float nNumMax = map(mouseX, 0, width, 10, width);
+  // ---
   for (int i = 1; i < rows-1; i++) {
     shapeSize = map(i, 1, rows-1, gridSize*2, gridSize*1);
-    float nNum = map(i, 1, rows-1, 20, 2);
+    float nNum = map(i, 1, rows-1, nNumMax, 2);
     float lerpAmount = map(i, 1, rows-1, 0, 1);
     color interpolate = lerpColor(from, to, lerpAmount);
     // ---
