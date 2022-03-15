@@ -1,9 +1,7 @@
 /*
  * thedotsiblack.com
- * interpolate colors with lerpColor
- * step_08
- *
- * use a line instead of rect()
+ * ep_36
+ * step_00 -> interpolate colors with lerpColor part #2
  */
 
 int gridSize = 50;
@@ -15,7 +13,6 @@ float alpha;
 float angle[];
 
 void setup() {
-  // fullScreen();
   size(620, 620, P2D);
   surface.setLocation(30, 30);
   noStroke();
@@ -28,14 +25,13 @@ void setup() {
   angle = new float[cols*rows];
   // ---
   for (int i = 0; i < cols*rows; i++) {
-    alpha += 90;
+    alpha += 11;
     angle[i] = alpha;
-    // angle[i] = random(360);
   }
 }
 
 void draw() {
-  background(33);
+  background(0, 15, 35);
   // color from = color(255);
   // color to = color(0, 150, 250);
   color from = #ED0DD9; // tendinous fuchsia
@@ -49,14 +45,12 @@ void draw() {
       float lerpAmount = map(sin(radians(angle[i*j]+alpha)), -1, 1, 0, 1);
       color interpolate = lerpColor(from, to, lerpAmount);
       // ---
-      // isolate the matrix at each x and y pos
       pushMatrix();
       translate(x, y);
-      rotate(radians(angle[i*j]+alpha));
+      rotate(radians(angle[i*j]+alpha+45));
       stroke(interpolate);
       strokeWeight(shapeSize * 0.3);
-      line(0, -shapeSize*0.5, 0, shapeSize*0.5);
-      line(-shapeSize*0.5, 0, shapeSize*0.5, 0);
+      line(0, -shapeSize/2, 0, shapeSize/2);
       popMatrix();
     }
   }
@@ -68,7 +62,6 @@ void draw() {
   rect(width/2, height/2, width, height);
 }
 
-// use keyboard to generate new random array values
 void keyPressed() {
   setup();
 }
