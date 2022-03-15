@@ -2,6 +2,8 @@
  * thedotsiblack.com
  * ep_36
  * step_00 -> interpolate colors with lerpColor part #2
+ *
+ * use a for() loop and fill the shapeSize with more lines
  */
 
 int gridSize = 50;
@@ -18,6 +20,8 @@ void setup() {
   noStroke();
   rectMode(CENTER);
   // ---
+  // println(ceil( shapeSize * 0.055 ));
+  // ---
   cols = width/gridSize;
   rows = height/gridSize;
   mx = (width - cols * gridSize)/2 + gridSize/2;
@@ -32,8 +36,6 @@ void setup() {
 
 void draw() {
   background(0, 15, 35);
-  // color from = color(255);
-  // color to = color(0, 150, 250);
   color from = #ED0DD9; // tendinous fuchsia
   color to = #C1C6FC; // isotopic light perwinkle
   // ---
@@ -48,9 +50,12 @@ void draw() {
       pushMatrix();
       translate(x, y);
       rotate(radians(angle[i*j]+alpha+45));
-      stroke(interpolate);
-      strokeWeight(shapeSize * 0.3);
-      line(0, -shapeSize/2, 0, shapeSize/2);
+      // ---
+      for (float n = 0; n < shapeSize; n += 4) {
+        stroke(interpolate);
+        strokeWeight(ceil(shapeSize * 0.05));
+        line(n, -shapeSize/2, n, shapeSize/2);
+      }
       popMatrix();
     }
   }
