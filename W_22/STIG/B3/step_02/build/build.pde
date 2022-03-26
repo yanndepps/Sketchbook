@@ -4,7 +4,7 @@
 * Source : https://www.youtube.com/watch?v=0raSvWXgCbE
 * Mathematica article : https://mathematica.stackexchange.com/questions/24148/how-can-this-image-optical-illusion-be-created-with-mathematica
 * B3 Biennale of the Moving Image : https://b3biennale.de/en/
- * Step_02
+ * Step_02 -> playground
 */
 
 // PImage typography;

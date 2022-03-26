@@ -10,11 +10,16 @@
 // PImage typography;
 float wRatio, hRatio;
 int seed = int(random(MAX_INT));
+// int seed = 809764480;
+// 571146906
+// 809764482
 
 void setup() {
-  size(566, 800);
+  fullScreen();
+  // size(2480, 3508);
   // size(620, 620);
-  surface.setLocation(25, 15);
+  // size(566, 800);
+  // surface.setLocation(25, 15);
   pixelDensity(displayDensity());
   // typography = loadImage("typography.png");
   wRatio = min(float(width)/float(height), 1);
