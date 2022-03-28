@@ -34,10 +34,10 @@ void setup() {
   fill(fc);
   rectMode(CENTER);
   // ---
-  println("x steps -> ", xStep);
+  // println("x steps -> ", xStep);
   // println("y steps -> ", yStep);
-  println("rect size -> ", rectSize);
-  println("margin x -> ", mx);
+  // println("rect size -> ", rectSize);
+  // println("margin x -> ", mx);
 }
 
 void draw() {
@@ -45,7 +45,8 @@ void draw() {
   // ---
   for (float x = mx; x < nw; x += xStep) {
     for (float y = my; y < nh; y += yStep) {
-      float rectEdge = map(x+y, mx+my, nw+nh, 5, rectSize);
+      // float rectEdge = map(x+y, mx+my, nw+nh, 5, rectSize);
+      float rectEdge = map(sin(radians(x+y)), -1, 1, 5, rectSize);
       rect(x, y, rectSize, rectSize, rectEdge);
     }
   }
