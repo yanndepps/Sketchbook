@@ -12,8 +12,8 @@ int nw = 620;
 int nh = 620;
 float xStep;
 float yStep;
-int rectSize;
-int mx, my;
+float rectSize;
+float mx, my;
 
 void settings() {
   size(nw, nh);
@@ -25,9 +25,10 @@ void setup() {
   // ---
   xStep = ceil( nw * 0.126 );
   yStep = ceil( nh * 0.126 );
+  rectSize = round( xStep * 0.7 );
   mx = ceil( nw * 0.05 );
   my = ceil( nw * 0.05 );
-  rectSize = ceil( nw * 0.111 );
+  // rectSize = ceil( nw * 0.111 );
   // ---
   noStroke();
   fill(fc);
@@ -42,9 +43,10 @@ void setup() {
 void draw() {
   background(bc);
   // ---
-  for (int x = mx; x < nw; x += xStep) {
-    for (int y = my; y < nh; y += yStep) {
-      rect(x, y, rectSize, rectSize, rectSize);
+  for (float x = mx; x < nw; x += xStep) {
+    for (float y = my; y < nh; y += yStep) {
+      float rectEdge = map(x+y, mx+my, nw+nh, 5, rectSize);
+      rect(x, y, rectSize, rectSize, rectEdge);
     }
   }
 }
