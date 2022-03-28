@@ -46,7 +46,9 @@ void draw() {
   // ---
   for (float x = mx; x < nw; x += xStep) {
     for (float y = my; y < nh; y += yStep) {
-      float rectEdge = map(sin(radians(x*y+alpha)), -1, 1, 5, rectSize);
+      float gridAlpha = map(sin(radians(x*y+alpha)), 0, 1, 0, 90);
+      float rectEdge = map(sin(radians(gridAlpha)), -1, 1, 5, rectSize);
+      fill(0, rectEdge*3);
       rect(x, y, rectSize, rectSize, rectEdge);
     }
   }
