@@ -4,4 +4,4 @@
 
 | Example screenshots                          |                                              |                                              |
 |----------------------------------------------|----------------------------------------------|----------------------------------------------|
-| <img src="./frames/001.png" width="256" /> | <img src="./frames/002.png" width="256" /> | <img src="./frames/003.gif" width="png" /> |
+| <img src="./frames/001.png" width="256" /> | <img src="./frames/002.png" width="256" /> | <img src="./frames/003.png" width="256" /> |
