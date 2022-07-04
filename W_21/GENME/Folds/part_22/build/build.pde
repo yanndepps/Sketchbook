@@ -3,7 +3,7 @@
 // Plane folding
 // Copyright by tsulej 2014
 // add large print export
-// A4 -> 300dpi -> 2480px
+// A4 -> 300dpi -> 2448x3508px
 // A5 -> 300dpi -> 1754px
 
 float step;
@@ -19,8 +19,8 @@ int fnumber;
 
 /* int nw = 1754; */
 /* int nh = 1754; */
-int nw = 512;
-int nh = 512;
+int nw = 2448;
+int nh = 2448;
 
 void settings() {
   size(nw, nh, P2D);
@@ -68,9 +68,6 @@ void draw() {
   generate();
 }
 
-void keyPressed() {
-  if (key == 's') saveImage();
-}
 
 void generate() {
   if (go) {
@@ -432,5 +429,5 @@ class Folds {
 
 void saveImage() {
   String timestamp = year() + nf(month(), 2) + nf(day(), 2) + "-"  + nf(hour(), 2) + nf(minute(), 2) + nf(second(), 2);
-  saveFrame(timestamp+".png");
+  saveFrame("images/" + timestamp + ".png");
 }
