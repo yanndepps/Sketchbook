@@ -5,6 +5,7 @@
 // add large print export
 // A4 -> 300dpi -> 2448x3508px
 // A5 -> 300dpi -> 1754px
+// A6 -> 300dpi -> 1240px
 
 float step;
 Folds f;
@@ -17,10 +18,12 @@ boolean dosinusoidal = true;
 
 int fnumber;
 
-/* int nw = 1754; */
-/* int nh = 1754; */
-int nw = 2448;
-int nh = 2448;
+//int nw = 1754;
+//int nh = 1754;
+int nw = 620;
+int nh = 620;
+//int nw = 2448;
+//int nh = 2448;
 
 void settings() {
   size(nw, nh, P2D);
